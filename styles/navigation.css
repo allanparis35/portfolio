@@ -1,0 +1,50 @@
+/* Styles pour la navigation */
+
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: var(--bg-nav);
+    padding: 20px 0;
+    z-index: 100;
+    border-bottom: 2px solid var(--border-color);
+    transition: background 0.3s, border-color 0.3s;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    align-items: center;
+}
+
+nav a {
+    color: var(--text-primary);
+    text-decoration: none;
+    font-size: 14px;
+    letter-spacing: 1px;
+    transition: all 0.3s;
+    padding: 5px 15px;
+    border-radius: 5px;
+}
+
+nav a:hover {
+    background: var(--bg-tertiary);
+    color: var(--accent);
+}
+
+.theme-toggle {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: all 0.3s;
+}
+
+.theme-toggle:hover {
+    background: var(--bg-tertiary);
+    transform: rotate(20deg);
+}

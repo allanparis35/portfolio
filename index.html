@@ -4,459 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Paris Allan</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            background: #1a1a1a;
-            color: #e0e0e0;
-            line-height: 1.8;
-        }
-
-        nav {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background: #0a0a0a;
-            padding: 20px 0;
-            z-index: 100;
-            border-bottom: 2px solid #333;
-        }
-
-        nav ul {
-            list-style: none;
-            display: flex;
-            justify-content: center;
-            gap: 40px;
-        }
-
-        nav a {
-            color: #e0e0e0;
-            text-decoration: none;
-            font-size: 14px;
-            letter-spacing: 1px;
-            transition: all 0.3s;
-            padding: 5px 15px;
-            border-radius: 5px;
-        }
-
-        nav a:hover {
-            background: #333;
-            color: #fff;
-        }
-
-        .page {
-            display: none;
-            min-height: 100vh;
-            padding: 100px 40px 60px 40px;
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-
-        .page.active {
-            display: block;
-            animation: fadeIn 0.5s;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-
-        .header-container {
-            display: flex;
-            align-items: center;
-            gap: 40px;
-            margin-bottom: 20px;
-            padding-bottom: 25px;
-            border-bottom: 2px solid #333;
-        }
-
-        .profile-photo {
-            width: 120px;
-            height: 150px;
-            border-radius: 15px;
-            border: 3px solid #444;
-            background: #2a2a2a;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 60px;
-            color: #666;
-            flex-shrink: 0;
-        }
-
-        .header-text h1 {
-            font-size: 56px;
-            font-weight: 600;
-            margin-bottom: 10px;
-            letter-spacing: -1px;
-            color: #fff;
-        }
-
-        .header-text p {
-            font-size: 18px;
-            color: #999;
-        }
-
-        h1 {
-            font-size: 56px;
-            font-weight: 600;
-            margin-bottom: 20px;
-            letter-spacing: -1px;
-            border-bottom: 2px solid #333;
-            padding-bottom: 15px;
-            color: #fff;
-        }
-
-        h2 {
-            font-size: 28px;
-            font-weight: 500;
-            margin: 50px 0 25px 0;
-            letter-spacing: 0.5px;
-            color: #fff;
-        }
-
-        h3 {
-            font-size: 20px;
-            font-weight: 500;
-            margin-bottom: 10px;
-            color: #fff;
-        }
-
-        p {
-            margin-bottom: 15px;
-            font-size: 16px;
-            color: #ccc;
-        }
-
-        .intro {
-            margin: 60px 0;
-            font-size: 20px;
-            line-height: 2;
-        }
-
-        .intro-highlight {
-            background: #333;
-            color: #fff;
-            padding: 3px 10px;
-            margin: 0 3px;
-            border-radius: 5px;
-        }
-
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-            margin: 40px 0;
-        }
-
-        .card {
-            background: #222;
-            border: 1px solid #333;
-            border-radius: 12px;
-            padding: 30px;
-            transition: all 0.3s;
-        }
-
-        .card:hover {
-            background: #2a2a2a;
-            border-color: #444;
-            transform: translateY(-5px);
-        }
-
-        .skill-list {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 20px;
-            margin: 30px 0;
-        }
-
-        .skill-item {
-            background: #222;
-            border: 1px solid #333;
-            border-radius: 8px;
-            padding: 15px;
-            text-align: center;
-            font-size: 14px;
-            letter-spacing: 1px;
-            transition: all 0.3s;
-        }
-
-        .skill-item:hover {
-            background: #2a2a2a;
-            border-color: #444;
-        }
-
-        .project {
-            background: #222;
-            border: 1px solid #333;
-            border-radius: 12px;
-            padding: 40px;
-            margin-bottom: 40px;
-            transition: all 0.3s;
-        }
-
-        .project:hover {
-            border-color: #444;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-        }
-
-        .project h3 {
-            font-size: 24px;
-            margin-bottom: 20px;
-        }
-
-        .project-tech {
-            margin: 20px 0;
-            font-style: italic;
-            font-size: 14px;
-            color: #888;
-        }
-
-        .project-link {
-            display: inline-block;
-            margin-top: 20px;
-            padding: 12px 30px;
-            background: #333;
-            color: #fff;
-            text-decoration: none;
-            border: 1px solid #444;
-            border-radius: 8px;
-            transition: all 0.3s;
-        }
-
-        .project-link:hover {
-            background: #444;
-            transform: translateY(-2px);
-        }
-
-        .experience-item {
-            margin-bottom: 40px;
-            padding: 30px;
-            border-left: 4px solid #444;
-            background: #222;
-            border-radius: 0 12px 12px 0;
-        }
-
-        .experience-item .date {
-            font-size: 13px;
-            letter-spacing: 1px;
-            margin-bottom: 10px;
-            color: #888;
-        }
-
-        .experience-item .title {
-            font-size: 20px;
-            margin-bottom: 15px;
-            color: #fff;
-        }
-
-        .experience-item ul {
-            margin-left: 20px;
-            margin-top: 10px;
-        }
-
-        .experience-item li {
-            margin-bottom: 8px;
-            color: #ccc;
-        }
-
-        .contact-form {
-            max-width: 600px;
-            margin: 40px 0;
-        }
-
-        .form-group {
-            margin-bottom: 30px;
-        }
-
-        label {
-            display: block;
-            margin-bottom: 10px;
-            font-size: 14px;
-            letter-spacing: 0.5px;
-            color: #ccc;
-        }
-
-        input, textarea {
-            width: 100%;
-            padding: 15px;
-            border: 1px solid #333;
-            background: #222;
-            color: #e0e0e0;
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            font-size: 14px;
-            border-radius: 8px;
-            transition: all 0.3s;
-        }
-
-        input:focus, textarea:focus {
-            outline: none;
-            background: #2a2a2a;
-            border-color: #444;
-        }
-
-        textarea {
-            min-height: 150px;
-            resize: vertical;
-        }
-
-        .submit-btn {
-            background: #333;
-            color: #fff;
-            border: 1px solid #444;
-            padding: 15px 40px;
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            font-size: 14px;
-            letter-spacing: 1px;
-            cursor: pointer;
-            border-radius: 8px;
-            transition: all 0.3s;
-        }
-
-        .submit-btn:hover {
-            background: #444;
-            transform: translateY(-2px);
-        }
-
-        .popup {
-            display: none;
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background: #222;
-            color: #fff;
-            padding: 40px 60px;
-            border: 2px solid #444;
-            border-radius: 15px;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.8);
-            z-index: 1000;
-        }
-
-        .popup.show {
-            display: block;
-            animation: popupAppear 0.3s;
-        }
-
-        @keyframes popupAppear {
-            from { 
-                transform: translate(-50%, -50%) scale(0.8);
-                opacity: 0;
-            }
-            to { 
-                transform: translate(-50%, -50%) scale(1);
-                opacity: 1;
-            }
-        }
-
-        .popup h2 {
-            margin: 0 0 20px 0;
-            border: none;
-            color: #fff;
-        }
-
-        .popup p {
-            margin: 0;
-            color: #ccc;
-        }
-
-        .popup button {
-            margin-top: 30px;
-            padding: 12px 35px;
-            background: #333;
-            color: #fff;
-            border: 1px solid #444;
-            border-radius: 8px;
-            cursor: pointer;
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            transition: all 0.3s;
-        }
-
-        .popup button:hover {
-            background: #444;
-        }
-
-        .overlay {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0,0,0,0.7);
-            z-index: 999;
-        }
-
-        .overlay.show {
-            display: block;
-        }
-
-        .about-section {
-            margin: 40px 0;
-            padding: 30px;
-            background: #222;
-            border: 1px solid #333;
-            border-radius: 12px;
-        }
-
-        .contact-info-box {
-            margin-top: 60px;
-            padding: 30px;
-            background: #222;
-            border: 1px solid #333;
-            border-radius: 12px;
-        }
-
-        .contact-info-box h3 {
-            margin-bottom: 20px;
-        }
-
-        .contact-info-box a {
-            color: #888;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-
-        .contact-info-box a:hover {
-            color: #ccc;
-        }
-
-        @media (max-width: 768px) {
-            nav ul {
-                gap: 15px;
-                font-size: 11px;
-            }
-            
-            .header-container {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            .header-text h1 {
-                font-size: 36px;
-            }
-            
-            h1 {
-                font-size: 36px;
-            }
-            
-            .page {
-                padding: 80px 20px 40px 20px;
-            }
-
-            .profile-photo {
-                width: 120px;
-                height: 120px;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="styles/variables.css">
+    <link rel="stylesheet" href="styles/base.css">
+    <link rel="stylesheet" href="styles/navigation.css">
+    <link rel="stylesheet" href="styles/accueil.css">
+    <link rel="stylesheet" href="styles/competences.css">
+    <link rel="stylesheet" href="styles/projets.css">
+    <link rel="stylesheet" href="styles/parcours.css">
+    <link rel="stylesheet" href="styles/contact.css">
+    <link rel="stylesheet" href="styles/gallery.css">
+    <link rel="stylesheet" href="styles/responsive.css">
 </head>
 <body>
     <nav>
@@ -466,13 +23,14 @@
             <li><a href="#" onclick="showPage('projets')">PROJETS</a></li>
             <li><a href="#" onclick="showPage('parcours')">PARCOURS</a></li>
             <li><a href="#" onclick="showPage('contact')">CONTACT</a></li>
+            <li><button class="theme-toggle" onclick="toggleTheme()" id="theme-btn">☀️</button></li>
         </ul>
     </nav>
 
     <div id="accueil" class="page active">
         <div class="header-container">
             <div class="profile-photo">
-                 <img src="pdp.png" alt="Photo de profil" style="width: 100%; height: 100%; border-radius: 12px;">
+                 <img src="images/pdp.png" alt="Photo de profil" style="width: 100%; height: 100%; border-radius: 12px;">
             </div>
             <div class="header-text">
                 <h1>PARIS ALLAN</h1>
@@ -560,29 +118,41 @@
     <div id="projets" class="page">
         <h1>PROJETS</h1>
 
-        
         <div class="project">
-            <h3>Jeu sur Terminal</h3>
-            <p>Un jeu interactif entièrement codé en Golang et jouable directement dans le terminal. 
-            Ce projet m'a permis d'apprendre la gestion des entrées utilisateur en temps réel et 
-            l'affichage dynamique dans un environnement console.</p>
-            <p class="project-tech">Technologies : Golang, Terminal</p>
-            <a href="#" class="project-link" onclick="alert('Remplace ce lien par ton repo GitHub'); return false;">VOIR LE CODE →</a>
+            <div class="project-image" onclick="openGallery('zelda')">
+                <img src="images/z.png" alt="Capture d'écran du jeu Terminal">
+            </div>
+            <div class="project-content">
+                <h3>Jeu sur Terminal</h3>
+                <p>Un jeu interactif entièrement codé en Golang et jouable directement dans le terminal. 
+                Ce projet m'a permis d'apprendre la gestion des entrées utilisateur en temps réel et 
+                l'affichage dynamique dans un environnement console.</p>
+                <p class="project-tech">Technologies : Golang, Terminal</p>
+                <a href="https://github.com/Enzooog/projet-red_ZELDA" class="project-link" target="_blank">VOIR LE CODE →</a>
+            </div>
         </div>
 
         <div class="project">
-            <h3>Puissance 4</h3>
-            <p>Une implémentation du jeu classique Puissance 4 avec une interface web en HTML/CSS 
-            et une logique de jeu codée en Golang. Le projet inclut la détection automatique des victoires 
-            et une interface utilisateur intuitive.</p>
-            <p class="project-tech">Technologies : Golang, HTML, CSS</p>
-            <a href="#" class="project-link" onclick="alert('Remplace ce lien par ton repo GitHub'); return false;">VOIR LE CODE →</a>
+            <div class="project-image" onclick="openGallery('puissance4')">
+                <img src="images/connect4logo.png" alt="Capture d'écran Puissance 4">
+            </div>
+            <div class="project-content">
+                <h3>Puissance 4</h3>
+                <p>Une implémentation du jeu classique Puissance 4 avec une interface web en HTML/CSS 
+                et une logique de jeu codée en Golang. Le projet inclut la détection automatique des victoires 
+                et une interface utilisateur intuitive.</p>
+                <p class="project-tech">Technologies : Golang, HTML, CSS</p>
+                <a href="https://github.com/allanparis35/projet-power_4.git" class="project-link" target="_blank">VOIR LE CODE →</a>
+            </div>
         </div>
 
         <div class="project">
-            <h3>Projets à venir</h3>
-            <p>Je travaille actuellement sur de nouveaux projets pour continuer à apprendre et à progresser. 
-            N'hésite pas à revenir pour voir les nouveautés !</p>
+            <div class="project-image">🔒</div>
+            <div class="project-content">
+                <h3>Projets à venir</h3>
+                <p>Je travaille actuellement sur de nouveaux projets pour continuer à apprendre et à progresser. 
+                N'hésite pas à revenir pour voir les nouveautés !</p>
+            </div>
         </div>
     </div>
 
@@ -701,26 +271,25 @@
         <button onclick="closePopup()">OK</button>
     </div>
 
-    <script>
-        function showPage(pageId) {
-            const pages = document.querySelectorAll('.page');
-            pages.forEach(page => page.classList.remove('active'));
-            document.getElementById(pageId).classList.add('active');
-        }
+    <div class="gallery-popup" id="gallery-popup">
+        <button class="close-gallery-btn" onclick="closeGallery()">✕</button>
+        
+        <h2 id="gallery-title">Galerie du projet</h2>
+        
+        <div class="gallery-nav">
+            <button class="gallery-nav-btn" onclick="prevImage()">◀</button>
+            <span class="gallery-counter" id="gallery-counter">1 / 3</span>
+            <button class="gallery-nav-btn" onclick="nextImage()">▶</button>
+        </div>
 
-        function showPopup() {
-            document.getElementById('popup').classList.add('show');
-            document.getElementById('overlay').classList.add('show');
-        }
+        <div class="gallery-main-image" id="gallery-main-image">
+            <img id="main-image" src="" alt="Image du projet" style="display:none;">
+            <div class="placeholder" id="main-placeholder">🎮</div>
+        </div>
 
-        function closePopup() {
-            document.getElementById('popup').classList.remove('show');
-            document.getElementById('overlay').classList.remove('show');
-        }
+        <div class="gallery-thumbnails" id="gallery-thumbnails"></div>
+    </div>
 
-        function handleSubmit(event) {
-            showPopup();
-        }
-    </script>
+    <script src="scripts/main.js"></script>
 </body>
 </html>

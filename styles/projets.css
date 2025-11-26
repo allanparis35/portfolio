@@ -1,0 +1,85 @@
+/* Styles pour la page projets */
+
+.project {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 40px;
+    margin-bottom: 40px;
+    transition: all 0.3s;
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 30px;
+    align-items: start;
+}
+
+.project:hover {
+    border-color: var(--border-hover);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+[data-theme="light"] .project:hover {
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.project-image {
+    width: 100%;
+    height: 200px;
+    border-radius: 8px;
+    background: var(--bg-tertiary);
+    border: 1px solid var(--border-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-dark);
+    font-size: 48px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.project-image:hover {
+    border-color: var(--border-hover);
+    transform: scale(1.02);
+}
+
+.project-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.project-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.project h3 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.project-tech {
+    margin: 20px 0;
+    font-style: italic;
+    font-size: 14px;
+    color: var(--text-muted);
+}
+
+.project-link {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 30px;
+    background: var(--bg-tertiary);
+    color: var(--accent);
+    text-decoration: none;
+    border: 1px solid var(--border-hover);
+    border-radius: 8px;
+    transition: all 0.3s;
+}
+
+.project-link:hover {
+    background: var(--border-hover);
+    transform: translateY(-2px);
+}

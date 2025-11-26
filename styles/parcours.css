@@ -1,0 +1,32 @@
+/* Styles pour la page parcours */
+
+.experience-item {
+    margin-bottom: 40px;
+    padding: 30px;
+    border-left: 4px solid var(--border-hover);
+    background: var(--bg-secondary);
+    border-radius: 0 12px 12px 0;
+}
+
+.experience-item .date {
+    font-size: 13px;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+    color: var(--text-muted);
+}
+
+.experience-item .title {
+    font-size: 20px;
+    margin-bottom: 15px;
+    color: var(--accent);
+}
+
+.experience-item ul {
+    margin-left: 20px;
+    margin-top: 10px;
+}
+
+.experience-item li {
+    margin-bottom: 8px;
+    color: var(--text-secondary);
+}

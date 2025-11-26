@@ -1,0 +1,57 @@
+/* Styles responsive pour mobile et tablette */
+
+@media (max-width: 768px) {
+    /* Navigation */
+    nav ul {
+        gap: 15px;
+        font-size: 11px;
+    }
+    
+    /* Page d'accueil */
+    .header-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .header-text h1 {
+        font-size: 36px;
+    }
+    
+    .profile-photo {
+        width: 120px;
+        height: 120px;
+    }
+
+    /* Base */
+    h1 {
+        font-size: 36px;
+    }
+    
+    .page {
+        padding: 80px 20px 40px 20px;
+    }
+
+    /* Projets */
+    .project {
+        grid-template-columns: 1fr;
+    }
+
+    .project-image {
+        height: 180px;
+    }
+
+    /* Galerie */
+    .gallery-popup {
+        width: 95%;
+        padding: 20px;
+    }
+
+    .gallery-main-image {
+        height: 250px;
+    }
+
+    .gallery-thumbnail {
+        width: 80px;
+        height: 60px;
+    }
+}
