@@ -57,3 +57,23 @@
     border: 1px solid var(--border-color);
     border-radius: 12px;
 }
+
+.cv-download-btn {
+    display: inline-block;
+    margin-top: 25px;
+    padding: 15px 35px;
+    background: var(--bg-tertiary);
+    color: var(--accent);
+    text-decoration: none;
+    border: 1px solid var(--border-hover);
+    border-radius: 8px;
+    font-size: 14px;
+    letter-spacing: 1px;
+    transition: all 0.3s;
+}
+
+.cv-download-btn:hover {
+    background: var(--border-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
